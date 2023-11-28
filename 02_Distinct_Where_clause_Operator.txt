@@ -1,0 +1,62 @@
+#database create
+CREATE DATABASE virtual_training;
+
+#database use
+USE virtual_training;
+
+#create table
+CREATE TABLE methodology(
+    id INT PRIMARY KEY,
+    name VARCHAR(25),
+    working_process TEXT
+);
+
+#insert all column values in the table
+INSERT INTO methodology(id, name, working_process)
+VALUES (1, 'Video_Conferencing', 'First'),
+       (2, 'Screen_Sharing', 'Second'),
+       (3, 'Breakout_Rooms', 'Third'),
+       (4, 'Gamification', 'Fourth'),
+       (5, 'Noise_Cancellation', 'Fifth'),
+       (6, 'Active_Simulations', 'Sixth'),
+       (7, 'Breakout_Rooms', '7th'),
+       (8, 'Gamification', '8th'),
+       (9, 'Noise_Cancellation', '9th'),
+       (10, 'Gamification', '10th');
+
+
+#find out name column values where do not consider any duplicate values.
+#use 'DISTINCT' keyword
+SELECT DISTINCT(name) FROM methodology;
+
+#find out table where do not consider any duplicate values and name = 'Gamification'
+#use 'DISTINCT' and 'WHERE Clause' keyword
+SELECT DISTINCT(name) FROM methodology
+WHERE name = 'Gamification';
+
+#do not consider any duplicate values, determine to name and working_process columns values where id is 3 and name is 'Gamification'
+#use 'DISTINCT', 'WHERE Clause' and 'AND' Operator
+SELECT DISTINCT name, working_process FROM methodology
+WHERE id = 3 AND name = 'Gamification';
+
+#do not consider any duplicate values, determine to name and working_process columns values where id is 3 or name is 'Gamification'
+#use 'DISTINCT', 'WHERE Clause' and 'OR' Operator
+SELECT DISTINCT name, working_process FROM methodology
+WHERE id = 3 OR name = 'Gamification';
+
+#do not consider any duplicate values, determine to name and working_process columns values where  name is not 'Gamification'
+#use 'DISTINCT', 'WHERE Clause' and 'NOT' Operator
+SELECT DISTINCT name, working_process FROM methodology
+WHERE NOT name = 'Gamification';
+
+#do not consider any duplicate values, determine to all records where id is 7 or name is 'Gamification' and working_process is not '9th';
+#use 'DISTINCT', 'WHERE Clause', 'AND', 'OR', and 'NOT' Operator
+SELECT DISTINCT * FROM methodology
+WHERE id = 7 OR name = 'Gamification' AND NOT working_process = '9th';
+
+
+
+
+
+
+
