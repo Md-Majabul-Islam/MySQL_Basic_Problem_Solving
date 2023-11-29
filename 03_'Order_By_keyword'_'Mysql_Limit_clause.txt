@@ -1,0 +1,72 @@
+#database create
+CREATE DATABASE virtual_training;
+
+#database use
+USE virtual_training;
+
+#create table
+CREATE TABLE methodology(
+    id INT PRIMARY KEY,
+    name VARCHAR(25),
+    working_process TEXT
+);
+
+#insert all column values in the table
+INSERT INTO methodology(id, name, working_process)
+VALUES (1, 'Video_Conferencing', 'First'),
+       (2, 'Screen_Sharing', 'Second'),
+       (3, 'Breakout_Rooms', 'Third'),
+       (4, 'Gamification', 'Fourth'),
+       (5, 'Noise_Cancellation', 'Fifth'),
+       (6, 'Active_Simulations', 'Sixth'),
+       (7, 'Breakout_Rooms', '7th'),
+       (8, 'Gamification', '8th'),
+       (9, 'Noise_Cancellation', '9th'),
+       (10, 'Gamification', '10th');
+
+#determine to all data of methodology table where id column maintains ascending order.
+#use 'ORDER BY(ASC)' keyword
+SELECT * FROM methodology
+ORDER BY id ASC;
+
+#determine to all data of methodology table where id column maintains descending order.
+#use 'ORDER BY(DESC)' keyword
+SELECT * FROM methodology
+ORDER BY id DESC;
+
+#determine to all data where consider to lowest five id column of methodology table.
+#use 'ORDER BY' keyword and 'MySQL LIMIT' clause.
+SELECT * FROM methodology
+ORDER BY id ASC
+LIMIT 5;
+
+#determine to all data where consider to highest five id column of methodology table.
+#use 'ORDER BY' keyword and 'MySQL LIMIT' clause.
+SELECT * FROM methodology
+ORDER BY id DESC
+LIMIT 5;
+
+#determine to id and working_process where staring from column id 3 and count number of five id of methodology table.
+#use 'ORDER BY' keyword and 'MySQL LIMIT' clause.
+SELECT id, working_process
+FROM methodology
+ORDER BY id ASC
+LIMIT 2,5;
+
+#determine to id and working_process where ending from column id 3 and count number of five id of methodology table.
+#use 'ORDER BY' keyword and 'MySQL LIMIT' clause.
+SELECT id, working_process
+FROM methodology
+ORDER BY id DESC
+LIMIT 2,5;
+
+
+
+
+
+
+
+
+
+
+
