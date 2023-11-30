@@ -5,7 +5,7 @@ CREATE DATABASE virtual_training;
 USE virtual_training;
 
 #create table
-CREATE TABLE new_table(
+CREATE TABLE methodology(
     id INT PRIMARY KEY,
     name VARCHAR(25),
     working_process TEXT
