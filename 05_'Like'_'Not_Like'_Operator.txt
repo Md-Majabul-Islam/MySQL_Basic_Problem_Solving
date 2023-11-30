@@ -1,0 +1,106 @@
+#database create
+CREATE DATABASE virtual_training;
+
+#database use
+USE virtual_training;
+
+#create table
+CREATE TABLE new_table(
+    id INT PRIMARY KEY,
+    name VARCHAR(25),
+    working_process TEXT
+);
+
+#insert all column values in the table
+INSERT INTO methodology(id, name, working_process)
+VALUES (1, 'Video_Conferencing', 'First'),
+       (2, 'Screen_Sharing', 'Second'),
+       (3, 'Breakout_Rooms', 'Third'),
+       (4, 'Gamification', 'Fourth'),
+       (5, 'Noise_Cancellation', 'Fifth'),
+       (6, 'Active_Simulations', 'Sixth'),
+       (7, 'Breakout_Rooms', '7th'),
+       (8, 'Gamification', '8th'),
+       (9, 'Noise_Cancellation', '9th'),
+       (10, 'Gamification', '10th');
+
+
+#Find out the all data of methodology table whose of names first letter consider 'G'.
+#use 'LIKE' operator
+SELECT *FROM methodology m
+WHERE name LIKE 'G%';
+
+#Find out the all data of methodology table whose of names second letter consider 'i'.
+#use 'LIKE' operator
+SELECT *FROM methodology m
+WHERE name LIKE '_i%';
+
+#Find out the all data of methodology table whose of names third letter consider 'i'.
+#use 'LIKE' operator
+SELECT *FROM methodology m
+WHERE name LIKE '__i%';
+
+#Find out the all data of methodology table whose of names last letter consider 'n'.
+#use 'LIKE' operator
+SELECT *FROM methodology m
+WHERE name LIKE '%n';
+
+#Find out the all data of methodology table whose of names second last letter consider 'n'.
+#use 'LIKE' operator
+SELECT *FROM methodology m
+WHERE name LIKE '%n_';
+
+#Find out the all data of methodology table whose of names third last letter consider 'n'.
+#use 'LIKE' operator
+SELECT *FROM methodology m
+WHERE name LIKE '%n__';
+
+#Find out the all data of methodology table whose of names first letter consider 'g' and  last letter consider 'n'.
+#use 'LIKE' operator
+SELECT *FROM methodology m
+WHERE name LIKE 'g%n';
+
+#Find out the all data of methodology table whose of names any middle letter consider 'g'.
+#use 'LIKE' operator
+SELECT *FROM methodology m
+WHERE name LIKE '%g%';
+
+#Find out the all data of methodology table whose of names first letter do not consider 'G'.
+#use 'NOT LIKE' operator
+SELECT *FROM methodology m
+WHERE name NOT LIKE 'G%';
+
+#Find out the all data of methodology table whose of names second letter do not consider 'i'.
+#use 'NOT LIKE' operator
+SELECT *FROM methodology m
+WHERE name NOT LIKE '_i%';
+
+#Find out the all data of methodology table whose of names third letter do not consider 'i'.
+#use 'NOT LIKE' operator
+SELECT *FROM methodology m
+WHERE name NOT LIKE '__i%';
+
+#Find out the all data of methodology table whose of names last letter do not consider 'n'.
+#use 'NOT LIKE' operator
+SELECT *FROM methodology m
+WHERE name NOT LIKE '%n';
+
+#Find out the all data of methodology table whose of names second last letter do not consider 'n'.
+#use 'NOT LIKE' operator
+SELECT *FROM methodology m
+WHERE name NOT LIKE '%n_';
+
+#Find out the all data of methodology table whose of names third last letter do not consider 'n'.
+#use 'NOT LIKE' operator
+SELECT *FROM methodology m
+WHERE name NOT LIKE '%n__';
+
+#Find out the all data of methodology table whose of names first letter consider 'g' and  last letter do not consider 'n'.
+#use 'NOT LIKE' operator
+SELECT *FROM methodology m
+WHERE name NOT LIKE 'g%n';
+
+#Find out the all data of methodology table whose of names any middle letter do not consider 'g'.
+#use 'NOT LIKE' operator
+SELECT *FROM methodology m
+WHERE name NOT LIKE '%g%';
