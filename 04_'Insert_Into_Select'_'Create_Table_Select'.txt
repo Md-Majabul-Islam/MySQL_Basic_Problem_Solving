@@ -5,25 +5,31 @@ CREATE DATABASE virtual_training;
 USE virtual_training;
 
 #create table
-CREATE TABLE new_table(
-    id INT PRIMARY KEY,
-    name VARCHAR(25),
-    working_process TEXT
+CREATE TABLE methodology(
+  id INT PRIMARY KEY,
+  name VARCHAR(25),
+  working_process TEXT
 );
 
 #insert all column values in the table
 INSERT INTO methodology(id, name, working_process)
 VALUES (1, 'Video_Conferencing', 'First'),
-       (2, 'Screen_Sharing', 'Second'),
-       (3, 'Breakout_Rooms', 'Third'),
-       (4, 'Gamification', 'Fourth'),
-       (5, 'Noise_Cancellation', 'Fifth'),
-       (6, 'Active_Simulations', 'Sixth'),
-       (7, 'Breakout_Rooms', '7th'),
-       (8, 'Gamification', '8th'),
-       (9, 'Noise_Cancellation', '9th'),
-       (10, 'Gamification', '10th');
+    (2, 'Screen_Sharing', 'Second'),
+    (3, 'Breakout_Rooms', 'Third'),
+    (4, 'Gamification', 'Fourth'),
+    (5, 'Noise_Cancellation', 'Fifth'),
+    (6, 'Active_Simulations', 'Sixth'),
+    (7, 'Breakout_Rooms', '7th'),
+    (8, 'Gamification', '8th'),
+    (9, 'Noise_Cancellation', '9th'),
+    (10, 'Gamification', '10th');
 
+#create table
+CREATE TABLE new_table(
+  id INT PRIMARY KEY,
+  name VARCHAR(25),
+  working_process TEXT
+);
 
 #Copy to all the data of methodology table and insert into new_table.
 #use 'INSERT INTO SELECT' statement
@@ -48,6 +54,3 @@ CREATE TABLE methodology_new_table AS
 SELECT *FROM methodology;
 #Output Check
 SELECT *FROM methodology_new_table;
-
-
-
