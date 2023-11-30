@@ -1,0 +1,53 @@
+#database create
+CREATE DATABASE virtual_training;
+
+#database use
+USE virtual_training;
+
+#create table
+CREATE TABLE new_table(
+    id INT PRIMARY KEY,
+    name VARCHAR(25),
+    working_process TEXT
+);
+
+#insert all column values in the table
+INSERT INTO methodology(id, name, working_process)
+VALUES (1, 'Video_Conferencing', 'First'),
+       (2, 'Screen_Sharing', 'Second'),
+       (3, 'Breakout_Rooms', 'Third'),
+       (4, 'Gamification', 'Fourth'),
+       (5, 'Noise_Cancellation', 'Fifth'),
+       (6, 'Active_Simulations', 'Sixth'),
+       (7, 'Breakout_Rooms', '7th'),
+       (8, 'Gamification', '8th'),
+       (9, 'Noise_Cancellation', '9th'),
+       (10, 'Gamification', '10th');
+
+
+#Copy to all the data of methodology table and insert into new_table.
+#use 'INSERT INTO SELECT' statement
+INSERT INTO new_table
+SELECT id, name, working_process FROM methodology;
+#Output Check
+SELECT *FROM new_table;
+
+
+#Copy to all the data of methodology table and insert into new_table where the name is 'Gamification'.
+#use 'INSERT INTO SELECT' statement
+INSERT INTO new_table
+SELECT id, name, working_process FROM methodology
+WHERE name = 'Gamification';
+#Output Check
+SELECT *FROM new_table;
+
+
+#Find out all the data of methodology table where collection of the finding data are put of new 'methodology_new_table'.
+#use 'CREATE TABLE SELECT' statement
+CREATE TABLE methodology_new_table AS
+SELECT *FROM methodology;
+#Output Check
+SELECT *FROM methodology_new_table;
+
+
+
