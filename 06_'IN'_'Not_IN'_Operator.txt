@@ -1,0 +1,47 @@
+#database create
+CREATE DATABASE virtual_training;
+
+#database use
+USE virtual_training;
+
+#create table
+CREATE TABLE new_table(
+    id INT PRIMARY KEY,
+    name VARCHAR(25),
+    working_process TEXT
+);
+
+
+#insert all column values in the table
+INSERT INTO methodology(id, name, working_process)
+VALUES (1, 'Video_Conferencing', 'First'),
+       (2, 'Screen_Sharing', 'Second'),
+       (3, 'Breakout_Rooms', 'Third'),
+       (4, 'Gamification', 'Fourth'),
+       (5, 'Noise_Cancellation', 'Fifth'),
+       (6, 'Active_Simulations', 'Sixth'),
+       (7, 'Breakout_Rooms', '7th'),
+       (8, 'Gamification', '8th'),
+       (9, 'Noise_Cancellation', '9th'),
+       (10, 'Gamification', '10th');
+
+
+#Find out the all data of methodology table whose id 1,5 and 9.
+#use 'IN' operator
+SELECT *FROM methodology m
+WHERE id IN (1,5,9);
+
+#Find out the all data of methodology table whose name Screen_Sharing, Breakout_Rooms and Gamification.
+#use 'IN' operator
+SELECT *FROM methodology m
+WHERE name IN ('Screen_Sharing', 'Breakout_Rooms', 'Gamification');
+
+#Find out the all data of methodology table whose do not consider id 1,5 and 9.
+#use 'NOT IN' operator
+SELECT *FROM methodology m
+WHERE id NOT IN (1,5,9);
+
+#Find out the all data of methodology table whose do not consider name Screen_Sharing, Breakout_Rooms and Gamification.
+#use 'NOT IN' operator
+SELECT *FROM methodology m
+WHERE name NOT IN ('Screen_Sharing', 'Breakout_Rooms', 'Gamification');
