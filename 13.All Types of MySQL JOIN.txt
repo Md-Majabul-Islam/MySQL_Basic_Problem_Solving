@@ -1,0 +1,81 @@
+#database create
+CREATE DATABASE virtual_training;
+
+#database use
+USE virtual_training;
+
+#create table1
+CREATE TABLE student(
+    id int,
+    name varchar(20),
+    salary int
+);
+
+#insert all column values in the table
+INSERT INTO student(id, name, salary)
+VALUES (1, 'RAKIB', 99999),
+       (2, 'SAKIB', 90000),
+       (3, 'OAKIB', 10000),
+       (4, 'JAKIB', 90500),
+       (5, 'MAKIB', 60000),
+       (6, 'GAKIB', 50000),
+       (7, 'NAKIB', 40000);
+
+
+#create table2
+CREATE TABLE student_02(
+    id int,
+    department varchar(25)
+);
+
+#insert all column values in the table
+INSERT INTO student_02(id,  department)
+VALUES (1, 'CSE'),
+       (2, 'EEE'),
+       (10, 'EEE'),
+       (20, 'CSE'),
+       (30, 'CSE'),
+       (40, 'ENG'),
+       (50, 'ENG'),
+       (60, 'CSE'),
+       (70, 'BAN');
+
+/*
+Consider to student table and student_02 table.Find out every students department
+and print out students id, name and salary and department.
+*/
+#use INNER JOIN
+SELECT student.id, student.name, student.salary, student_02.department FROM student
+INNER JOIN student_02
+ON student.id = student_02.id; #common column of both table which is identifiable
+
+    
+/*
+Consider to student table and student_02 table.Find out every students department
+and print out students id, name and salary.
+*/
+#use LEFT JOIN
+SELECT student.id, student.name, student.salary, student_02.department FROM student
+LEFT JOIN student_02
+ON student.id = student_02.id; #common column of both table which is identifiable
+
+    
+/*
+Consider to student table and student_02 table.Find out every students department
+and print out students id, name and salary.
+*/
+#use RIGHT JOIN
+SELECT student.id, student.name, student.salary, student_02.department FROM student
+RIGHT JOIN student_02
+ON student.id = student_02.id; #common column of both table which is identifiable
+
+    
+/*
+Cross join to student table and student_02 table and maintain ascending order for id.
+*/
+#use CROSS JOIN
+SELECT *FROM student
+CROSS JOIN student_02
+ORDER BY student.id, student_02.id ASC;
+ #common column of both table which is identifiable
+
