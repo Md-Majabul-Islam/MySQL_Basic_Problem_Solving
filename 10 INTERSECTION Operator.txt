@@ -1,0 +1,67 @@
+#database create
+CREATE DATABASE virtual_training;
+
+#database use
+USE virtual_training;
+
+#create table1
+CREATE TABLE student(
+    id int,
+    name varchar(20),
+    salary int
+);
+
+#insert all column values in the table
+INSERT INTO student(id, name, salary)
+VALUES (1, 'RAKIB', 99999),
+       (2, 'SAKIB', 90000),
+       (3, 'OAKIB', 10000),
+       (4, 'JAKIB', 90500),
+       (5, 'MAKIB', 60000),
+       (6, 'GAKIB', 50000),
+       (7, 'NAKIB', 40000);
+
+#create table2
+CREATE TABLE student_02(
+    id int,
+    name varchar(20),
+    salary int
+);
+
+#insert all column values in the table
+INSERT INTO student_02(id, name, salary)
+VALUES (1, 'RAKIB', 99999),
+       (2, 'SAKIB', 90000)
+       (10, 'RAKIB', 99999),
+       (20, 'SAKIB', 90000),
+       (30, 'OAKIB', 10000),
+       (40, 'JAKIB', 70500),
+       (50, 'MAKIB', 50000),
+       (60, 'GAKIB', 40000),
+       (70, 'NAKIB', 30000);
+
+/*
+Find out all the common data of id 1, 2, 10 used to student and
+student_02 table where do not consider any duplicate value.
+*/
+#use 'INTERSECT' operator
+SELECT *FROM student
+WHERE id IN (1, 2, 10)
+INTERSECT
+SELECT *FROM student_02
+WHERE id IN(1, 2, 20);
+
+/*
+Find out all the common data of id 1, 2, 7 used to student and
+id 1, 2, 10 student_02 table where do not consider any duplicate value.
+*/
+#use 'INTERSECT' operator
+SELECT *FROM student
+WHERE id IN (1, 2, 7)
+INTERSECT
+SELECT *FROM student_02
+WHERE id IN(1, 2, 10);
+
+
+
+
